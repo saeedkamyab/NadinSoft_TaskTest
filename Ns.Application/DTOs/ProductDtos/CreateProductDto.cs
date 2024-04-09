@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Ns.Application.DTOs.Product
+namespace Ns.Application.DTOs.ProductDtos
 {
-    public class ProductDto
+    public class CreateProductDto
     {
         public string Name { get; set; }
         public DateTime ProduceDate { get; set; }

@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
-using Ns.Application.DTOs.Product;
-using Ns.Application.Features.Product.Requests.Queries;
+using Ns.Application.DTOs.ProductDtos;
+using Ns.Application.Features.Products.Requests.Queries;
 using Ns.Application.Persistence.Contracts;
-using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ns.Application.Features.Product.Handlers.Qeries
+namespace Ns.Application.Features.Products.Handlers.Qeries
 {
     public class GetProductListRequestHandler : IRequestHandler<GetProductListRequest, List<ProductListDto>>
     {

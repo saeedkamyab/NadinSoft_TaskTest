@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ns.Application.DTOs.Product
+namespace Ns.Application.DTOs.ProductDtos
 {
     public class ProductListDto
     {
