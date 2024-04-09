@@ -14,8 +14,4 @@
     <ProjectReference Include="..\Ns.Domain\Ns.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Product\Handlers\Qeries\" />
-  </ItemGroup>
-
 </Project>
