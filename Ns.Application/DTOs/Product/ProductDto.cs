@@ -1,9 +1,8 @@
-﻿using Ns.Domain.Models.Common;
-using System;
+﻿using System;
 
-namespace Ns.Domain.Models
+namespace Ns.Application.DTOs.Product
 {
-    public class Product : BaseEntity<int>
+    public class ProductDto
     {
         public string Name { get; set; }
         public DateTime ProduceDate { get; set; }
