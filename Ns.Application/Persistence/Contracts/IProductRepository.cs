@@ -3,7 +3,7 @@ using Ns.Domain.Models;
 
 namespace Ns.Application.Persistence.Contracts
 {
-    public interface ProductRepository:IBaseRepository<Product>
+    public interface IProductRepository:IBaseRepository<Product>
     {
 
     }
