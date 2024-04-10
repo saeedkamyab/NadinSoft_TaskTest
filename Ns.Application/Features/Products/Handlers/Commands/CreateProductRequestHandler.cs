@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
 using Ns.Application.DTOs.ProductDtos.Validators;
@@ -27,7 +28,7 @@ namespace Ns.Application.Features.Products.Handlers.Commands
             var valResult = await validator.ValidateAsync(request.CreateProductDto);
 
             if (!valResult.IsValid)
-                throw new System.Exception();
+                throw new ValidationException(valResult.Errors);
             
             
 

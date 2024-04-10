@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Ns.Application.Exceptions;
 using Ns.Application.Features.Products.Requests.Commands;
 using Ns.Application.Persistence.Contracts;
 using System;
@@ -24,6 +25,11 @@ namespace Ns.Application.Features.Products.Handlers.Commands
         public async Task<Unit> Handle(DeleteProductRequest request, CancellationToken cancellationToken)
         {
                 var productItem = await _productRepository.Get(request.Id);
+
+            if(productItem == null)
+                throw new NotFoundException(nameof(productItem),request.Id);
+
+
                 await _productRepository.Delete(productItem);
                 return Unit.Value;
             

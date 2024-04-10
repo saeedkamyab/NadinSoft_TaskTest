@@ -12,6 +12,6 @@ namespace Ns.Application.Features.Products.Requests.Commands
 
         public UpdateProductDto UpdateProductDto { get; set; }
 
-        public ChangeProductAvailable ChangeProductAvailable { get; set; }
+        public ChangeProductAvailableDto ChangeProductAvailable { get; set; }
     }
 }
