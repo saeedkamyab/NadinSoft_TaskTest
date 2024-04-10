@@ -21,7 +21,7 @@ namespace Ns.Application.Features.Products.Handlers.Commands
 
         public async Task<int> Handle(CreateProductRequest request, CancellationToken cancellationToken)
         {
-            var product = _mapper.Map<Product>(request.ProductDto);
+            var product = _mapper.Map<Product>(request.CreateProductDto);
             product=await _productRepository.Add(product);
             return product.Id;
         }

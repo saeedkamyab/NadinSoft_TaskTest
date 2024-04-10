@@ -5,6 +5,6 @@ namespace Ns.Application.Features.Products.Requests.Commands
 {
     public class CreateProductRequest:IRequest<int>
     {
-        public ProductDto ProductDto { get; set; }
+        public CreateProductDto CreateProductDto { get; set; }
     }
 }

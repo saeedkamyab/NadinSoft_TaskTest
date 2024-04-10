@@ -13,7 +13,7 @@ namespace Ns.Application.Persistence.Contracts.Common
 
         Task<TEntity> Update(TEntity entity);
 
-        Task<TEntity> Delete(int id);
+        Task<TEntity> Delete(TEntity entity);
 
     }
 }

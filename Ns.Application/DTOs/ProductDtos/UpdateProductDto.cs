@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Ns.Application.DTOs.ProductDtos
 {
-    public class ProductDto
+    public class UpdateProductDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
