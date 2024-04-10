@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using FluentValidation.Results;
 using MediatR;
+using Ns.Application.DTOs.ProductDtos.Validators;
 using Ns.Application.Features.Products.Requests.Commands;
 using Ns.Application.Persistence.Contracts;
 using Ns.Domain.Models;
@@ -21,6 +23,14 @@ namespace Ns.Application.Features.Products.Handlers.Commands
 
         public async Task<int> Handle(CreateProductRequest request, CancellationToken cancellationToken)
         {
+            var validator=new CreateProductDtoValidator(_productRepository);
+            var valResult = await validator.ValidateAsync(request.CreateProductDto);
+
+            if (!valResult.IsValid)
+                throw new System.Exception();
+            
+            
+
             var product = _mapper.Map<Product>(request.CreateProductDto);
             product=await _productRepository.Add(product);
             return product.Id;

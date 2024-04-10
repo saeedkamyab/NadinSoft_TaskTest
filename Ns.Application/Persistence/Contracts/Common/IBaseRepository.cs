@@ -9,6 +9,8 @@ namespace Ns.Application.Persistence.Contracts.Common
 
         Task<IReadOnlyList<TEntity>> GetAll();
 
+        Task<bool> IsExist(int id);
+
         Task<TEntity> Add(TEntity entity);
 
         Task<TEntity> Update(TEntity entity);
