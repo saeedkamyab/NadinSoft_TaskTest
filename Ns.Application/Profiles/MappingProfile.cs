@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Ns.Application.DTOs.Product;
+using Ns.Application.DTOs.ProductDtos;
 using Ns.Domain.Models;
 
 namespace Ns.Application.Profiles
