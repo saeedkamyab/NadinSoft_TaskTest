@@ -13,9 +13,9 @@ namespace Ns.Application.Persistence.Contracts.Common
 
         Task<TEntity> Add(TEntity entity);
 
-        Task<TEntity> Update(TEntity entity);
+        Task Update(TEntity entity);
 
-        Task<TEntity> Delete(TEntity entity);
+        Task Delete(TEntity entity);
 
     }
 }
