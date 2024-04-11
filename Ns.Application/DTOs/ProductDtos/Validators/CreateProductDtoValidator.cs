@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
-using Ns.Application.Persistence.Contracts;
-using Ns.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
+using Ns.Application.Contracts.Persistence;
 
 namespace Ns.Application.DTOs.ProductDtos.Validators
 {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using Ns.Application.Contracts.Persistence;
 using Ns.Application.DTOs.ProductDtos;
 using Ns.Application.Features.Products.Requests.Queries;
-using Ns.Application.Persistence.Contracts;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;

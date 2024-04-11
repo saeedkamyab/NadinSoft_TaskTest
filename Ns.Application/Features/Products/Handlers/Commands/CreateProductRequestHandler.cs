@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using FluentValidation.Results;
 using MediatR;
+using Ns.Application.Contracts.Persistence;
 using Ns.Application.DTOs.ProductDtos.Validators;
 using Ns.Application.Features.Products.Requests.Commands;
-using Ns.Application.Persistence.Contracts;
 using Ns.Domain.Models;
 using System.Threading;
 using System.Threading.Tasks;

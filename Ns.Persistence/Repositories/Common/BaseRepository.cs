@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ns.Application.Persistence.Contracts.Common;
+using Ns.Application.Contracts.Persistence.Common;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

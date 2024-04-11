@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using Ns.Application.Contracts.Persistence;
 using Ns.Application.Exceptions;
 using Ns.Application.Features.Products.Requests.Commands;
-using Ns.Application.Persistence.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

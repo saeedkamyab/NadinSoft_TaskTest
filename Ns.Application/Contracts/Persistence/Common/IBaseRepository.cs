@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Ns.Application.Persistence.Contracts.Common
+namespace Ns.Application.Contracts.Persistence.Common
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {

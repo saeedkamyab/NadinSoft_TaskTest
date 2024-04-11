@@ -1,9 +1,9 @@
-﻿using Ns.Application.Persistence.Contracts.Common;
+﻿using Ns.Application.Contracts.Persistence.Common;
 using Ns.Domain.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace Ns.Application.Persistence.Contracts
+namespace Ns.Application.Contracts.Persistence
 {
     public interface IProductRepository:IBaseRepository<Product>
     {

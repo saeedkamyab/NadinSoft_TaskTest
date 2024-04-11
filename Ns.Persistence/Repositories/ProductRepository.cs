@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ns.Application.Persistence.Contracts;
-using Ns.Application.Persistence.Contracts.Common;
+using Ns.Application.Contracts.Persistence;
 using Ns.Domain.Models;
 using Ns.Persistence.Repositories.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Ns.Persistence.Repositories
