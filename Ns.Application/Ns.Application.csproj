@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Ns.Domain\Ns.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contracts\Identity\" />
-  </ItemGroup>
-
 </Project>

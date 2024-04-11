@@ -26,10 +26,10 @@ namespace Ns.Application.Features.Products.Handlers.Commands
             var validator=new CreateProductDtoValidator(_productRepository);
             var valResult = await validator.ValidateAsync(request.CreateProductDto);
 
-            //if (!valResult.IsValid)
-            //    throw new ValidationException(valResult.Errors);
-            
-            
+            if (!valResult.IsValid)
+                throw new ValidationException(valResult.Errors);
+
+
 
             var product = _mapper.Map<Product>(request.CreateProductDto);
             product=await _productRepository.Add(product);
