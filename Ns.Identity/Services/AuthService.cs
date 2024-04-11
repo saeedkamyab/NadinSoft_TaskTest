@@ -21,7 +21,7 @@ namespace Ns.Identity.Services
             , IOptions<JwtSetings> jwtSettings, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
-            _jwtSettings = jwtSettings; 
+            _jwtSettings = jwtSettings;
             _signInManager = signInManager;
         }
         public Task<AuthResponse> Login(AuthRequest loginRequest)
@@ -29,9 +29,42 @@ namespace Ns.Identity.Services
             throw new NotImplementedException();
         }
 
-        public Task<RegisterationResponse> Register(RegistrationRequest registrationRequest)
+        public async Task<RegisterationResponse> Register(RegistrationRequest registrationRequest)
         {
-            throw new NotImplementedException();
+            var existingUser = await _userManager.FindByNameAsync(registrationRequest.UserName);
+            if (existingUser != null)
+            {
+                throw new Exception($"user name '{registrationRequest.UserName}' is already exsist!");
+            }
+
+            var user = new ApplicationUser
+            {
+                Email = registrationRequest.Email,
+                FirstName = registrationRequest.FirstName,
+                LastName = registrationRequest.LastName,
+                UserName = registrationRequest.UserName,
+
+            };
+
+            var existingEmail = await _userManager.FindByEmailAsync(registrationRequest.Email);
+            if (existingEmail == null)
+            {
+                var result = await _userManager.CreateAsync(user, registrationRequest.Password);
+                if (result.Succeeded)
+                {
+                    return new RegisterationResponse() { UserId = user.Id };
+                }
+                else
+                {
+                    throw new Exception($"{result.Errors}");
+                }
+            }
+            else
+            {
+                throw new Exception($"Email '{registrationRequest.Email}' is already exsist!");
+
+            }
+
         }
     }
 }
