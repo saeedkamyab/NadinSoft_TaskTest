@@ -15,9 +15,11 @@ namespace Ns.Persistence
         {
             services.AddDbContext<NsDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString(""));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
             
+      
+
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             services.AddScoped<IProductRepository,ProductRepository>();
