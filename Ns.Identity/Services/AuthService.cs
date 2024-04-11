@@ -43,6 +43,11 @@ namespace Ns.Identity.Services
             JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
             AuthResponse response = new AuthResponse()
             {
+                Id=user.Id,
+                Token=new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
+                Email=loginRequest.Email,
+                UserName=user.UserName,
+
             };
        return response;
         }
