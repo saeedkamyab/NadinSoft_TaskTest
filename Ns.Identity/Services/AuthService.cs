@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
@@ -29,9 +30,21 @@ namespace Ns.Identity.Services
             _jwtSettings = jwtSettings;
             _signInManager = signInManager;
         }
-        public Task<AuthResponse> Login(AuthRequest loginRequest)
+        public async Task<AuthResponse> Login(AuthRequest loginRequest)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.FindByEmailAsync(loginRequest.Email);
+            if (user == null)
+            {
+                throw new Exception($"there is no {loginRequest.Email} email!");
+            }
+            var result = await _signInManager.PasswordSignInAsync(user.UserName, loginRequest.Password, false, lockoutOnFailure: false);
+            if (!result.Succeeded)
+                throw new Exception("Login Faild!");
+            JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
+            AuthResponse response = new AuthResponse()
+            {
+            };
+       return response;
         }
 
         private async Task<JwtSecurityToken> GenerateToken(ApplicationUser user)
